@@ -1,0 +1,192 @@
+# =========================================================================
+# .gitignore for big-data-ai-coursework
+# 主用途：排除 API Key / 密码 / 密钥等敏感信息, 以及构建产物与编辑器缓存
+# 用法：直接在仓库根目录生效；不要在这里直接填密钥, 用 .env 引用即可
+# =========================================================================
+
+# -----------------------------------------------------------------------------
+# 🔒 敏感信息 / Credentials  (重点保护项)
+# -----------------------------------------------------------------------------
+# 环境变量文件
+.env
+.env.*
+!.env.example                       # 只允许 .env.example 进入版本控制
+*.env.local
+
+# 通用密钥 / 证书 / 凭据
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.keystore
+*.jks
+secrets/
+credentials/
+*.secret
+*.token
+api-keys.*
+*-credentials.json
+service-account*.json
+gha-creds-*.json
+
+# 常见云厂商凭据目录
+.aws/
+.azure/
+.gcp/
+.gcloud/
+.gsutil/
+.kube/
+.kubectl/
+
+# SSH / GPG
+.ssh/
+.id_rsa
+.id_dsa
+*.gpg
+*.asc
+
+# 数据库连接字符串 / 凭据
+*DSN*
+connection-string.txt
+db-credentials.*
+
+# Slack / GitHub / NPM token 文件
+.github_token
+*.npmrc
+.pypirc
+
+# -----------------------------------------------------------------------------
+# 🐍 Python  (含 Jupyter / venv)
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.python-version
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+profile_default/
+*.ipynb_checkpoints
+Untitled*.ipynb
+
+# -----------------------------------------------------------------------------
+# 📦 Node / JavaScript
+# -----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/
+.pnpm-store/
+.babel-cache/
+.parcel-cache/
+.next/
+.nuxt/
+out/
+
+# -----------------------------------------------------------------------------
+# 💻 IDE / 编辑器
+# -----------------------------------------------------------------------------
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+!.vscode/extensions.json            # 推荐的扩展配置可入仓
+!.vscode/settings.json              # 推荐的工作区设置可入仓
+*.swp
+*.swo
+*~
+.history/
+
+# -----------------------------------------------------------------------------
+# 🖥️ 操作系统
+# -----------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# -----------------------------------------------------------------------------
+# 🗂️ 构建产物 / 临时文件 / 日志
+# -----------------------------------------------------------------------------
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
+*.pid
+*.seed
+*.pid.lock
+coverage/
+.turbo/
+.cache/
+.parcel-cache/
+
+# -----------------------------------------------------------------------------
+# 🤖 WorkBuddy / AI 助手本地产物 (个人化内容, 默认不入仓)
+# -----------------------------------------------------------------------------
+# 工作日志是个人会话上下文, 默认不入仓; 如要共享可手动加 ! 重新纳入
+.workbuddy/memory/
+.workbuddy/cache/
+.workbuddy/file-history/
+.workbuddy/audit-log/
+.workbuddy/connectors/
+.workbuddy/changes-detail/
+.workbuddy/changes-index/
+.workbuddy/file-tree-manifests/
+.workbuddy/edge-sync-*.db
+.workbuddy/edge-sync-*.db-shm
+.workbuddy/edge-sync-*.db-wal
+.workbuddy/last-launch.json
+
+# -----------------------------------------------------------------------------
+# 📊 Big Data / 数据科学常见忽略
+# -----------------------------------------------------------------------------
+*.parquet
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.feather
+*.arrow
+
+# -----------------------------------------------------------------------------
+# 🔧 Misc
+# -----------------------------------------------------------------------------
+*.local
+*.lock
+.tmp/
+.temp/
+.cache/
